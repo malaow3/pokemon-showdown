@@ -767,7 +767,8 @@ export const commands: Chat.ChatCommands = {
 
 		let resultString = Utils.escapeHTML(Teams.export(team, {hideStats}));
 		if (showAll) {
-			resultString = `<details><summary>${this.tr`View team`}</summary>${resultString}</details>`;
+			// https://www.smogon.com/forums/threads/have-an-option-to-copy-the-show-team.3704275/
+			resultString = `<details><summary>${this.tr`View team`}</summary>${resultString}</details><br /><button>Copy</button>`;
 		}
 		this.runBroadcast(true);
 		return this.sendReplyBox(resultString);
